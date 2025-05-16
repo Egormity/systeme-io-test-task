@@ -133,7 +133,19 @@ const Table = <T extends Array<TItem>>({
 								inputProps={{
 									value: JSON.stringify(value).slice(),
 									className: "w-full",
-									// onChange: e => setEditItem(s => ({ ...s, [key]: JSON.parse(e.target.value) })),
+									onChange: e =>
+										setEditItem(s => ({
+											...s,
+											[key]: (() => {
+												try {
+													const value = JSON.parse(e.target.value);
+													return value;
+												} catch (error) {
+													alert(error instanceof Error ? error.message : "Unknown error");
+													return s?.[key];
+												}
+											})(),
+										})),
 								}}
 							/>
 						</div>
