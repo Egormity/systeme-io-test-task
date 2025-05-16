@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+body {
+	@apply bg-stone-200;
+}
+
+#root {
+	@apply grid h-screen grid-cols-[175px_1fr];
+}
+
+* button {
+	cursor: pointer;
+}
