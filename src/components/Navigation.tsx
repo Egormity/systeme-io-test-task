@@ -11,7 +11,7 @@ const data = [
 //
 const Navigation = () => {
 	return (
-		<nav className="flex h-full flex-col items-center bg-stone-50 text-2xl">
+		<nav className="flex h-full flex-col items-center bg-stone-50 text-xl">
 			<NavLink to="/" className="w-full px-7 py-5">
 				<img src="logo.png" className="h-16 w-16" />
 			</NavLink>
