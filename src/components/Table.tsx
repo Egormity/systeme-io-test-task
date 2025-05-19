@@ -151,7 +151,17 @@ const Table = <T extends Array<TItem>>({
 						</div>
 					))}
 				</div>
-				<Button buttonProps={{ onClick: closeEditModal, className: "text-xl" }}>Save</Button>
+				<Button
+					buttonProps={{
+						onClick: () => {
+							alert("Saving edited data feature not implemented");
+							// closeEditModal();
+						},
+						className: "text-xl",
+					}}
+				>
+					Save
+				</Button>
 			</Modal>
 		</>
 	);
