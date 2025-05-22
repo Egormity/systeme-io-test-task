@@ -2,9 +2,9 @@ import useGetPages from "../api/useGetPages";
 import Table from "../components/Table";
 
 const PagePages = () => {
-	const { data, isLoading } = useGetPages();
+	const { data, setData, isLoading } = useGetPages();
 
 	//
-	return <Table data={data} isLoading={isLoading} />;
+	return <Table data={data} setData={setData} isLoading={isLoading} />;
 };
 export default PagePages;

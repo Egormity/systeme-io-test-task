@@ -11,6 +11,7 @@ const Input = ({
 		value?: string;
 		onChange?: (e: { target: { value: string } }) => void;
 		readOnly?: boolean;
+		disabled?: boolean;
 	};
 	contentRight?: React.ReactNode;
 }) => {

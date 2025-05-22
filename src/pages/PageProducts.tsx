@@ -2,9 +2,9 @@ import useGetProducts from "../api/useGetProducts";
 import Table from "../components/Table";
 
 const PageProducts = () => {
-	const { data, isLoading } = useGetProducts();
+	const { data, setData, isLoading } = useGetProducts();
 
 	//
-	return <Table data={data} isLoading={isLoading} />;
+	return <Table data={data} setData={setData} isLoading={isLoading} />;
 };
 export default PageProducts;

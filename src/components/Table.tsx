@@ -16,11 +16,13 @@ import ButtonCross from "./buttons/ButtonCross";
 type TItem = { [key: string]: unknown };
 const Table = <T extends Array<TItem>>({
 	data,
+	setData,
 	isLoading,
 	isSearch = true,
 	isEditable = true,
 }: {
 	data: NullUndefinedAble<T>;
+	setData?: (data: T) => void;
 	isLoading?: NullUndefinedAble<boolean>;
 	isSearch?: NullUndefinedAble<boolean>;
 	isEditable?: boolean;
@@ -132,6 +134,7 @@ const Table = <T extends Array<TItem>>({
 								containerProps={{ className: "bg-stone-100" }}
 								inputProps={{
 									value: JSON.stringify(value).slice(),
+									disabled: key === "id",
 									className: "w-full",
 									onChange: e =>
 										setEditItem(s => ({
@@ -154,8 +157,10 @@ const Table = <T extends Array<TItem>>({
 				<Button
 					buttonProps={{
 						onClick: () => {
-							alert("Saving edited data feature not implemented");
-							// closeEditModal();
+							if (editItem && data) {
+								setData?.(data.map(el => (el.id === editItem.id ? editItem : el)) as T);
+								closeEditModal();
+							}
 						},
 						className: "text-xl",
 					}}

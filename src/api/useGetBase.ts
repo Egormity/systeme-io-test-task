@@ -19,6 +19,6 @@ const useGetBase = <T>({ mockData }: { mockData: T }) => {
 	}, [mockData]);
 
 	//
-	return { data, isLoading };
+	return { data, setData, isLoading };
 };
 export default useGetBase;
